@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">TripHunt</string>
+    <string name="click_to_continue">Click to continue</string>
+    <string name="click_to_exit">Click to exit</string>
+    <string name="enter_your_name">enter your name</string>
+    <string name="enter_button">Enter</string>
+    <string name="the_calling_activity_was">the calling activity was</string>
+    <string name="geting_name">go get the name</string>
+    <string name="getbear_name">getbear</string>
+    <string name="brands">brands</string>
+    <string name="loginActivity">Login Tab</string>
+    <string name="exit_to_login">Exit</string>
+    <string name="tittle_text">welcome to sending and receiving world</string>
+    <string name="send_message">send</string>
+    <string name="main_chating_page">Chat Service</string>
+    <string name="sencond_chating_page">secon chating page</string>
+    <string-array name="beer_colors">
+        <item>light</item>
+        <item>brown</item>
+        <item>amber</item>
+        <item>dark</item>
+    </string-array>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="welcome_message">Welcome to Trip Hunt</string>
+    <string name="triphunt">TripHunt</string>
+    <string name="login_with_google">login with google+</string>
+    <string name="login_with_facebook">login with facebook</string>
+</resources>

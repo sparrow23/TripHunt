@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_your_name">enter spanish name</string>
+    <string name="exit_to_login">Exit</string>
+    <string name="tittle_text">welcome to sending and receiving world</string>
+    <string name="send_message">send</string>
+    <string name="sencond_chating_page">secon chating page</string>
+    <string name="welcome_message">Welcome to trip hunt</string>
+</resources>

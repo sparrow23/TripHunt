@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/splach_back">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:textColorHighlight="@color/switch_thumb_disabled_material_dark"
+        android:textColor="@android:color/darker_gray"
+        android:textIsSelectable="false"
+        android:textSize="@android:dimen/app_icon_size"
+        android:id="@+id/textView"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/login_with_facebook"
+        android:layout_centerInParent="true"
+        android:id="@+id/button"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:onClick="click_continue"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/login_with_google"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:textColor="@android:color/white"
+        android:onClick="click_continue"/>
+
+</RelativeLayout>
