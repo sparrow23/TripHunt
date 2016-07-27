@@ -25,16 +25,14 @@
 
 
 
-    <Button
-        android:layout_width="match_parent"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/login_with_facebook"
-        android:layout_centerInParent="true"
-        android:id="@+id/button"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:onClick="click_continue"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -42,10 +40,14 @@
         android:padding="16dp"
         android:text="@string/login_with_google"
         android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_marginTop="10dp"
         android:background="@android:color/holo_red_light"
         android:textColor="@android:color/white"
-        android:onClick="click_continue"/>
+        android:onClick="click_continue"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="174dp" />
+
+
 
 </RelativeLayout>

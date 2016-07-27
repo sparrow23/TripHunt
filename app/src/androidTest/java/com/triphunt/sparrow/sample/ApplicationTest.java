@@ -1,4 +1,4 @@
-package com.example.anujsparrow.travel;
+package com.triphunt.sparrow.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
