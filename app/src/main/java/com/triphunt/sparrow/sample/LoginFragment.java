@@ -95,6 +95,7 @@ public class LoginFragment extends Fragment {
                     .beginTransaction();
             fragmentTransaction.replace(R.id.mainContainer, new HomeFragment());
             fragmentTransaction.commit();
+
         }
     }
 

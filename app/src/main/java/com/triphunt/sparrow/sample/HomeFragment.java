@@ -1,5 +1,6 @@
 package com.triphunt.sparrow.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -51,7 +52,6 @@ public class HomeFragment extends Fragment {
         Picasso.with(getActivity())
                 .load(profile.getProfilePictureUri(400, 400).toString())
                 .into(profile_pic);
-
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

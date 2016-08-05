@@ -1,5 +1,6 @@
 package com.triphunt.sparrow.sample;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -9,15 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
-
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 
 
-public class SecondScreen extends AppCompatActivity {
-
-   // public LoginFragment loginFragment = new LoginFragment();
+public class SecondScreen extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +23,15 @@ public class SecondScreen extends AppCompatActivity {
         AppEventsLogger.activateApp(getApplication());
 
         setContentView(R.layout.second_layout);
+        android.support.v4.app.FragmentManager fragmentManager = this.getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        LoginFragment loginFragment = new LoginFragment();
+
+        fragmentTransaction.add(R.id.mainContainer, loginFragment) ;
+       // fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
 
     }
 
