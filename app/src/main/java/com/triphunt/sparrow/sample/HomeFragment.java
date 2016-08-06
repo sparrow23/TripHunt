@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager
                 .beginTransaction();
-        fragmentTransaction.replace(R.id.mainContainer, new LoginFragment());
+        fragmentTransaction.replace(R.id.frag_container1, new LoginFragment());
         fragmentTransaction.commit();
     }
 

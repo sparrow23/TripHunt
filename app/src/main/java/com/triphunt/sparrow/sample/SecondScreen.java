@@ -28,12 +28,12 @@ public class SecondScreen extends AppCompatActivity{
 
         LoginFragment loginFragment = new LoginFragment();
 
-        fragmentTransaction.add(R.id.mainContainer, loginFragment) ;
-       // fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.add(R.id.frag_container1, loginFragment) ;
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
-
     }
+
 
     public void click_continue(View view) {
         String response = "sorry sir we haven't worked so far!!!";

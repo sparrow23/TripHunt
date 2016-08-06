@@ -93,7 +93,7 @@ public class LoginFragment extends Fragment {
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager
                     .beginTransaction();
-            fragmentTransaction.replace(R.id.mainContainer, new HomeFragment());
+            fragmentTransaction.replace(R.id.frag_container1, new HomeFragment());
             fragmentTransaction.commit();
 
         }
