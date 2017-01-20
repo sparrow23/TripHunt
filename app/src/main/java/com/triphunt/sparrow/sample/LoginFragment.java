@@ -2,6 +2,7 @@ package com.triphunt.sparrow.sample;
 
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -53,6 +57,7 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         callbackManager = CallbackManager.Factory.create();
 
 
@@ -94,6 +99,7 @@ public class LoginFragment extends Fragment {
             FragmentTransaction fragmentTransaction = fragmentManager
                     .beginTransaction();
             fragmentTransaction.replace(R.id.frag_container1, new HomeFragment());
+            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
 
         }
@@ -102,7 +108,13 @@ public class LoginFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.login_fragment, container, false);
+        View view = inflater.inflate(R.layout.login_fragment, container, false);
+
+        RelativeLayout r = (RelativeLayout) view.findViewById(R.id.relative);
+        r.setBackgroundResource(R.drawable.movie);
+        AnimationDrawable anim = (AnimationDrawable) r.getBackground();
+        anim.start();
+        return view ;
     }
 
     @Override
@@ -143,7 +155,18 @@ public class LoginFragment extends Fragment {
             loginButton.setVisibility(View.INVISIBLE);
             Profile profile = Profile.getCurrentProfile();
             homeFragment(profile);
+
         }
+
+    }
+    public void click_google(View view) {
+        String response = "You are going to google activity";
+
+        Toast.makeText(getActivity(),response, Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(getActivity(), GoogleActivity.class);
+        getActivity().startActivity(i);
+
 
     }
 }

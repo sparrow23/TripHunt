@@ -35,8 +35,5 @@ public class SecondScreen extends AppCompatActivity{
     }
 
 
-    public void click_continue(View view) {
-        String response = "sorry sir we haven't worked so far!!!";
-        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
-    }
+
 }

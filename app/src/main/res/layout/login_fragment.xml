@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splach_back">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,18 +32,17 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
-    <Button
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/login_with_google"
-        android:id="@+id/button2"
-        android:background="@android:color/holo_red_light"
-        android:textColor="@android:color/white"
-        android:onClick="click_continue"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/login_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="210dp" />
+        android:layout_marginTop="20dp"
+        android:color="#4285F4"
+        android:text="Login with Google"
+        android:onClick="click_google"/>
+
 
 </RelativeLayout>

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click_continue(View view) {
-        String response = "ok you are continueing";
+        String response = "ok you are continuing";
         Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
 
         Intent getNameScreenIntent = new Intent(this, SecondScreen.class);
