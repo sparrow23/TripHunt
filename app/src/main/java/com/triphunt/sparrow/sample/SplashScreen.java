@@ -30,7 +30,7 @@ public class SplashScreen extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 iv.startAnimation(an2);
-                finish();
+                 finish();
                 Intent  i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
             }
