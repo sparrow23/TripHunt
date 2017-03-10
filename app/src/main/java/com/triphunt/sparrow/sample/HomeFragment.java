@@ -16,6 +16,9 @@ import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.squareup.picasso.Picasso;
 
+
+
+
 public class HomeFragment extends Fragment {
 
     private ImageView profile_pic = null;
@@ -47,7 +50,7 @@ public class HomeFragment extends Fragment {
         }
 
 
-        tv.setText("Welcome \n" + profile.getName());
+        tv.setText("Welcome \n" + profile.getName());//asking for current profile name
 
         Picasso.with(getActivity())
                 .load(profile.getProfilePictureUri(400, 400).toString())

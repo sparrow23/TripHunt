@@ -19,6 +19,7 @@ import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
@@ -56,6 +57,8 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
+        //AccessToken accessToken = AccessToken.getCurrentAccessToken();
 
 
         callbackManager = CallbackManager.Factory.create();
@@ -91,6 +94,7 @@ public class LoginFragment extends Fragment {
             Bundle mBundle = new Bundle();
             mBundle.putParcelable(PARCEL_KEY, profile);
             HomeFragment hf = new HomeFragment();
+            GoogleActivity gf = new GoogleActivity();
 
             hf.setArguments(mBundle);
 
@@ -162,9 +166,9 @@ public class LoginFragment extends Fragment {
     public void click_google(View view) {
         String response = "You are going to google activity";
 
-        Toast.makeText(getActivity(),response, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(),  response, Toast.LENGTH_SHORT).show();
 
-        Intent i = new Intent(getActivity(), GoogleActivity.class);
+        Intent i = new Intent(this.getActivity(), GoogleActivity.class);
         getActivity().startActivity(i);
 
 

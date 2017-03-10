@@ -39,7 +39,7 @@
         android:layout_below="@+id/login_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:color="#4285F4"
         android:text="Login with Google"
         android:onClick="click_google"/>
