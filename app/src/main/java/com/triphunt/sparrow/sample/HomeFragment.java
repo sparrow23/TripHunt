@@ -16,6 +16,9 @@ import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.squareup.picasso.Picasso;
 
+
+
+
 public class HomeFragment extends Fragment {
 
     private ImageView profile_pic = null;

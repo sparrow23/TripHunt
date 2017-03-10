@@ -1,4 +1,7 @@
 <resources>
+    <!-- Strings related to topfragment -->
+    <string name="title_top">Top Fragment</string>
+    <!-- Strings related to topfragment -->
     <string name="click_to_continue">Click to continue</string>
     <string name="click_to_exit">Click to exit</string>
     <string name="enter_your_name">enter your name</string>
@@ -12,12 +15,32 @@
     <string name="tittle_text">welcome to sending and receiving world</string>
     <string name="send_message">send</string>
     <string name="main_chating_page">Chat Service</string>
-    <string-array name="beer_colors">
+
+    <string-array name="pizzas">
         <item>light</item>
         <item>brown</item>
-        <item>amber</item>
-        <item>dark</item>
     </string-array>
+
+    <string-array name="pasta">
+        <item>light</item>
+        <item>brown</item>
+    </string-array>
+
+    <string-array name="stores">
+        <item>banglore</item>
+        <item>patna</item>
+    </string-array>
+
+    <string-array name="titles">
+        <item>Home</item>
+        <item>Pizzas</item>
+        <item>Pasta</item>
+        <item>Stores</item>
+    </string-array>
+
+
+    <string name="open_drawer">Open drawer</string>
+    <string name="close_drawer">close drawer</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
