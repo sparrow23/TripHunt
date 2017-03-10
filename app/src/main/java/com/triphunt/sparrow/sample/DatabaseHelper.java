@@ -92,6 +92,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Visit place table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + Table_Visit_Place + "(V_P_Id INTEGER PRIMARY KEY, V_P_Name TEXT, V_P_Addr TEXT, P_V_Id INTEGER, FOREIGN KEY(P_V_Id) REFERENCES Places(P_Id))");
 
+        //Andaman & Nicobar Place Details
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (101, 'Radhanagar Beach', 'Havelock Island, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (102, 'Cellular Jail', 'Port Blair in the Territory of Andaman and Nicobar Islands, India.', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (103, 'Jolly Buoy Island', 'Mahatma Gandhi National Park, Port Blair, South Andaman Island, India.', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (104, 'Neil Island', 'Experience Andamans Tours Pvt. Ltd.Opposite Cooperative Bank,Dairy Farm, Port Blair,Andaman and Nicobar Islands, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (105, 'Ross Island', '2 km east of Port Blair, Port Blair, South Andaman Island, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (106, 'Elephant Beach', 'Havelock Island, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (107, 'Kaala Pathar Beach', 'Port Blair,, Havelock Island 744211, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (108, 'Makruzz', 'Airport Authority Colony, Delanipur, Port Blair, Andaman and Nicobar Islands 744102', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (109, 'Samudrika Marine Museum', 'Airport Authority Colony, Haddo, Port Blair, Andaman and Nicobar Islands 744102', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (110, 'Anthropological Museum', 'Phoenix Bay, Port Blair, South Andaman Island 744104, India', 01)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (111, 'Corbyn's Cove', 'Carbyns Cove, Port Blair, Andaman and Nicobar Islands 744112', 01)");
+        //Auli (uttarakhand) Place Details
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (112, 'Trishul Peak', 'Garhwal Region | Auli Joshimath, Auli 246443, India', 02)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (113, 'Gorson Bugyal', 'Auli, India', 02)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (114, 'Auli Ski & Snowboard School', 'Joshimath, Chamoli, Auli 246443, India', 02)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (115, 'Chenab Lake', 'Dang Village | Thang Village, Auli 246443, India', 02)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (116, 'Bhavishya Badri', '3 Km From Tapovan | Subhai Village Saldhar, Auli 246443, India', 02)");
+        db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (117, 'Vanshinarayan Kalpeshwar', '10 Km From Helang Village | Urgam Village, Auli 246443, India', 02)");
+        //Goa Place Details
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (101, 'Dona Paula', '7 km from Panaji Centre | Lovers Paradise, Panjim, India', 04)");
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (102, ' Fort Aguada', 'Shore of the Mandovi river, Sinquerim, India.', 04)");
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (103, 'Old Goa Churches', ' Old Goa, Panjim 403402, India', 04)");
@@ -100,11 +120,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (106, ' Majorda Beach', 'Majorda Village, Salcette, Majorda 403713, India.', 04)");
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (107, 'Cansaulim Monte', 'Cansaulim Monte Goa, India', 04)");
         db.execSQL("INSERT INTO " + Table_Visit_Place + " VALUES (108, 'Martin’s Corner', '69, Binwaddo, Betalbatim, Salcette, Salcette, Goa 403713, India', 04)");
+
         //End of visited place table
 
         //Hotel name table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + Table_Hotels + "(H_Id INTEGER PRIMARY KEY, H_Name TEXT, H_Addr TEXT, Price TEXT, Local_Market TEXT, P_H_Id INTEGER, FOREIGN KEY(P_H_Id) REFERENCES Places(P_Id))");
 
+        //Andaman & Nicobar Hotel Details
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (101, 'Munjoh Ocean', 'Havelock, Andaman and Nicobar Islands, India', '12,928/nyt', 'null', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (102, 'Hotel Sentinel', 'Port Blair, Andaman and Nicobar Islands, India', '8,359/nyt', 'null', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (103, 'Sea Shell', 'Havelock, Andaman and Nicobar Islands, India', '7,866/nyt', 'null', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (104, 'Andaman Galley', 'Port Blair, Andaman and Nicobar Islands, India', '3,251/nyt', 'null', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (105, 'Mainak', 'Port Blair, Andaman and Nicobar Islands, India', '2,233/nyt', '', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (106, 'Anugama Resort', 'Port Blair, Andaman and Nicobar Islands, India', '2,775/nyt', '', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (107, 'Islander Inn', 'Port Blair, Andaman and Nicobar Islands, India', '3,031/nyt', '', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (108, 'Wild Orchid', 'Port Blair, Andaman and Nicobar Islands, India', '5,552/nyt', '', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (109, 'Hotel Galaxy', 'Port Blair, Andaman and Nicobar Islands, India', '1,592/nyt', '', 01)");
+        db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (110, 'Aparupa', 'Port Blair, Andaman and Nicobar Islands, India', '1,943/nyt', '', 01)");
+        //Goa Hotel Details
         db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (101, 'Radisson blu resort', 'Cavelossim Beach, Mobor 403001 Goa India', '25,999/nyt', '1.Sagar Market', 04)");
         db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (102, 'Hardrock hotel', '370/14, Near KFC, Porba Vaddo, Calangute, Bardez, Goa 403516, India', '12,500/nyt', '1.Anjuna Flea Market, 2.Baga Night Market', 04)");
         db.execSQL("INSERT INTO " + Table_Hotels + " VALUES (103, 'Fortune acron regina', 'Off Fort Aguada Road, Candolim, Bardez, Goa 403515, India', '7999/nyt', '1.Candolim Market', 04)");
@@ -118,6 +151,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Mall name table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + Table_Malls + "(Malls_Id INTEGER PRIMARY KEY, Malls_Name TEXT, Malls_Addr TEXT, P_Malls_Id INTEGER, FOREIGN KEY(P_Malls_Id) REFERENCES Places(P_Id))");
 
+        //Andaman & Nicobar Mall Details
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (101, 'Aberdeen Bazaar', 'Aberdeen Bazar, Aberdeen, Port Blair, Andaman and Nicobar Islands 744104', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (102, 'Sagarika Emporium', ' DAG Colony, Port Blair, Andaman and Nicobar Islands 744101', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (103, 'Mahananda Complex Mall', 'Great Andaman Trunk Rd, Rangat, Andaman and Nicobar Islands 744205', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (104, 'City Super Shoppe', 'Aberdeen Bazar, Rajiv Gandhi Nagar, Port Blair, Andaman and Nicobar Islands 744101', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (105, 'Sapna Complex', ' VIP Rd, Pathergudda, Bhathu Basti, Port Blair, Andaman and Nicobar Islands 744103', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (106, 'Oasis Plaza', 'Great Andaman Trunk Rd, Dairy Farm, Port Blair, Andaman and Nicobar Islands 744101', 01)");
+        db.execSQL("INSERT INTO " + Table_Malls + " VALUES (107, 'DiveIndia', 'SH5, 744211', 01)");
+        //Goa Mall Details
         db.execSQL("INSERT INTO " + Table_Malls + " VALUES (101, 'Valanka Shopping Mall', 'Calangute - Anjuna Rd, Naika Vaddo, Bardez, Calangute, Goa 403516, India', 04)");
         db.execSQL("INSERT INTO " + Table_Malls + " VALUES (102, 'Caculo Mall', '16, Shanta, St. Inez Road, Near Vintage, Hospital, Panjim, Goa 403001, India', 04)");
         db.execSQL("INSERT INTO " + Table_Malls + " VALUES (103, 'Mall De Goa', 'Mall De Goa, NH 17, Alto Porvorim, Penha de França, Goa 403521, India', 04)");
@@ -128,6 +170,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Multiplex name table
         db.execSQL("CREATE TABLE IF NOT EXISTS " + Table_Multiplexes + "(M_Id INTEGER PRIMARY KEY, M_Name TEXT, M_Addr TEXT, P_M_Id INTEGER, FOREIGN KEY(P_M_Id) REFERENCES Places(P_Id))");
 
+        //Andaman & Nicobar Multiplex Details
+        //Goa Multiplex Details
         db.execSQL("INSERT INTO " + Table_Multiplexes + " VALUES (101, 'Inox Cinemas Mall De Goa', 'Old GMC Heritage Precinct, D.B. Road, Campal, Panjim, Goa 403001, India', 04)");
         db.execSQL("INSERT INTO " + Table_Multiplexes + " VALUES (102, 'Hira Talkies', 'Bicholim Goa', 04)");
         db.execSQL("INSERT INTO " + Table_Multiplexes + " VALUES (103, 'Z-Square Multiplex', 'Opp. Auto Service India, Fl Gomes Rd, Vasco da Gama, Goa 403802, India', 04)");
