@@ -16,10 +16,11 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
 
-        final ImageView iv = (ImageView) findViewById(R.id.imageView);
+        final ImageView iv = (ImageView) findViewById(R.id.imageView2);
+        final ImageView iv1 = (ImageView) findViewById(R.id.imageView3);
         final Animation an1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
         final Animation an2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.abc_fade_out);
-
+        final Animation an3 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotaterev);
         iv.startAnimation(an1);
         an1.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -30,6 +31,29 @@ public class SplashScreen extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 iv.startAnimation(an2);
+                finish();
+                Intent  i = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        }
+
+
+        );
+        iv1.startAnimation(an3);
+        an3.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                iv1.startAnimation(an2);
                  finish();
                 Intent  i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
