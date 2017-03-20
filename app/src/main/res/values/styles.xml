@@ -7,9 +7,33 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
-
-
     </style>
+
+        <style name="AppTheme.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+
+        <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+        <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+        <style name="DemoAppTheme" parent="AppBaseTheme"></style>
+
+        <style name="EditText">
+            <item name="android:gravity">left</item>
+            <item name="android:layout_gravity">center</item>
+        </style>
+
+        <style name="Button">
+            <item name="android:gravity">center</item>
+            <item name="android:layout_gravity">fill</item>
+            <item name="android:textColor">@color/textbuttoncolor</item>
+            <item name="android:background">@color/colorAccent</item>
+        </style>
+
 
 
 </resources>

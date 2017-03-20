@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.triphunt.sparrow.sample.PlaceInfo"
+    android:background="@drawable/frame1">
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Recommended by TRIPHUNT"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/Submit4"
+                style="@style/Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:configChanges="orientation"
+                android:imeOptions="flagNoExtractUi"
+                android:padding="15dp"
+                android:text="Goa"
+                android:textColor="#ffffff"
+                android:textSize="40sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Optional Places"
+                android:paddingTop="30dp"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/Submit1"
+                style="@style/Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:configChanges="orientation"
+                android:imeOptions="flagNoExtractUi"
+                android:padding="10dp"
+                android:text="Manali"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/Submit2"
+                style="@style/Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:configChanges="orientation"
+                android:imeOptions="flagNoExtractUi"
+                android:padding="10dp"
+                android:text="Coorg"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/Submit3"
+                style="@style/Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:configChanges="orientation"
+                android:imeOptions="flagNoExtractUi"
+                android:padding="10dp"
+                android:text="Delhi"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/Submit"
+                style="@style/Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:configChanges="orientation"
+                android:imeOptions="flagNoExtractUi"
+                android:padding="10dp"
+                android:text="Shimla"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/footerSnack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="top">
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+

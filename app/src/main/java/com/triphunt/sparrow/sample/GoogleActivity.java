@@ -32,7 +32,7 @@ public class GoogleActivity extends AppCompatActivity implements
         View.OnClickListener,
         GoogleApiClient.OnConnectionFailedListener {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainScreen.class.getSimpleName();
     private static final int RC_SIGN_IN = 007;
 
     private GoogleApiClient mGoogleApiClient;
@@ -47,7 +47,7 @@ public class GoogleActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.screen_main);
 
         btnSignIn = (SignInButton) findViewById(R.id.sign_in_button);
         btnSignOut = (Button) findViewById(R.id.btn_sign_out);

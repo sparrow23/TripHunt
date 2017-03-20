@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "725151116259",
+    "project_id": "triphunt-140106"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725151116259:android:c8746d49dde12b8d",
+        "android_client_info": {
+          "package_name": "com.triphunt.sparrow.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725151116259-drc80esh5115rph2vipsdkv7t6bv211f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.triphunt.sparrow.sample",
+            "certificate_hash": "5A78C5DCA0E3E1FD59F1C22650376891DC153E59"
+          }
+        },
+        {
+          "client_id": "725151116259-nrqc7eur9hkcuti96pmgbuke7t4krdkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADGgry7I2cP2iG5tPorGfDXnoBvbivR4w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
