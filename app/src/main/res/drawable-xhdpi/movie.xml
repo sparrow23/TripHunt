@@ -3,5 +3,5 @@
         <item android:drawable="@drawable/frame1" android:duration="3000" android:id="@+id/item1"/>
         <item android:drawable="@drawable/frame2" android:duration="3000" android:id="@+id/item2"/>
         <item android:drawable="@drawable/frame3" android:duration="3000" android:id="@+id/item3"/>
-        <item android:drawable="@drawable/frame5" android:duration="3000" android:id="@+id/item5"/>
+        <item android:drawable="@drawable/frame4" android:duration="3000" android:id="@+id/item5"/>
 </animation-list>
