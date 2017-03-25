@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.triphunt.sparrow.sample.MainActivity"
-    android:background="@drawable/frame1">
+    android:background="@drawable/f1">
 
     <ScrollView
         android:id="@+id/login_form"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingTop="5dp">
+            android:paddingTop="10dp">
 
             <EditText
                 android:id="@+id/userId"
@@ -126,22 +126,14 @@
                 android:layout_marginBottom="8dp"
                 android:configChanges="orientation"
                 android:imeOptions="flagNoExtractUi"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:text="@string/action_sign_in"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:onClick="click_continue"/>
         </LinearLayout>
     </ScrollView>
 
-
-    <LinearLayout
-        android:id="@+id/footerSnack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_gravity="top">
-    </LinearLayout>
 
 </RelativeLayout>
 
