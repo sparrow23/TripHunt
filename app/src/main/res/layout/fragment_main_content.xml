@@ -9,7 +9,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.triphunt.sparrow.sample.MainActivity"
     android:background="@drawable/f1">
 
     <ScrollView
@@ -117,6 +116,8 @@
                 android:padding="7dp"
                 android:password="false"
                 android:singleLine="true" />
+
+
             <Button
                 android:id="@+id/Submit"
                 style="@style/Button"
@@ -130,7 +131,8 @@
                 android:text="@string/action_sign_in"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
-                android:onClick="click_continue"/>
+                android:onClick="search"/>
+
         </LinearLayout>
     </ScrollView>
 

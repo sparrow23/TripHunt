@@ -36,8 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logout_button"
         android:layout_marginTop="10dp"
-        android:onClick="click_continue"
+        android:onClick="search"
         android:text="Go"
-        android:clickable="false" />
+        android:clickable="false"
+        android:id="@+id/go"/>
 
 </RelativeLayout>

@@ -25,8 +25,8 @@ public class HomeFragment extends Fragment {
     private ImageView profile_pic = null;
     private TextView tv = null;
     private Button logoutButton = null;
-    private Profile profile = null;
-
+    public  Profile profile = null;
+    private Button go = null;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -34,6 +34,7 @@ public class HomeFragment extends Fragment {
         profile_pic = (ImageView) view.findViewById(R.id.profile_pic);
         tv = (TextView) view.findViewById(R.id.tv_name);
         logoutButton = (Button) view.findViewById(R.id.logout_button);
+        go = (Button) view.findViewById(R.id.go);
         return view;
     }
 
@@ -62,6 +63,12 @@ public class HomeFragment extends Fragment {
                 logout();
             }
         });
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search();
+            }
+        });
 
     }
 
@@ -72,6 +79,15 @@ public class HomeFragment extends Fragment {
                 .beginTransaction();
         fragmentTransaction.replace(R.id.frag_container1, new LoginFragment());
         fragmentTransaction.commit();
+    }
+
+    private void search()
+    {
+        String response = "ok you are continuing";
+        Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
+
+        Intent getNameScreenIntent = new Intent(getActivity(), MainActivity.class);
+        startActivity(getNameScreenIntent);
     }
 
 }

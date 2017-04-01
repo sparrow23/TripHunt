@@ -1,13 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.triphunt.sparrow.sample.Main3Activity">
-    <item
-        android:id="@+id/action_example"
-        android:showAsAction="withText|ifRoom"
-        android:title="@string/action_example" />
+    tools:context="com.triphunt.sparrow.sample.MainActivity">
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:showAsAction="never"
         android:title="@string/action_settings" />
 </menu>
