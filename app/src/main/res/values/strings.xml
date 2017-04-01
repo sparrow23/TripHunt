@@ -15,6 +15,16 @@
     <string name="tittle_text">welcome to sending and receiving world</string>
     <string name="send_message">send</string>
     <string name="main_chating_page">Chat Service</string>
+    <string name="purpose_holiday">Purpose of Holiday</string>
+    <string-array name="purpose">
+        <item>Select Purpose Of Holiday</item>
+        <item>Honeymoon</item>
+        <item>Picnic</item>
+        <item>Summer Vacation</item>
+        <item>Winter Vacation</item>
+        <item>Pilgrimage</item>
+        <item>Other</item>
+    </string-array>
 
     <string-array name="pizzas">
         <item>light</item>
@@ -79,7 +89,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- strings of weather-->
-     <string name="temperature">Temperature</string>
+    <string name="temperature">Temperature</string>
     <string name="condition">Condition</string>
     <string name="location">Location</string>
     <string name="powered_by_yahoo">powered by Yahoo!</string>

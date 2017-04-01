@@ -9,6 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.triphunt.sparrow.sample.MainActivity"
     android:background="@drawable/f1">
 
     <ScrollView
@@ -26,7 +27,7 @@
             android:paddingTop="10dp">
 
             <EditText
-                android:id="@+id/userId"
+                android:id="@+id/budget_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
                 android:singleLine="true" />
 
             <AutoCompleteTextView
-                android:id="@+id/email"
+                android:id="@+id/no_person_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,22 +57,24 @@
                 android:password="false"
                 android:singleLine="true"
                 android:windowSoftInputMode="adjustResize" />
-            <EditText
-                android:id="@+id/phoneNumber"
-                style="@style/EditText"
+
+            <Spinner
+                android:id="@+id/spinner2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_alignParentRight="false"
                 android:background="#FFF"
-                android:hint="Purpose Of Holiday"
-                android:imeOptions="actionNext"
-                android:inputType="phone|number"
-                android:maxLines="1"
                 android:padding="7dp"
-                android:singleLine="true" />
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_toRightOf="@+id/phoneNumber"
+                android:entries="@array/purpose"
+                android:gravity="center"
+                android:layout_gravity = "fill"
+                android:layout_marginBottom="5dp" />
+
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/no_day_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,14 +84,14 @@
                 android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified|actionDone"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:maxLines="1"
                 android:padding="7dp"
                 android:phoneNumber="false"
                 android:singleLine="true" />
 
             <EditText
-                android:id="@+id/displayName"
+                android:id="@+id/date_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,7 +106,7 @@
                 android:singleLine="true" />
 
             <EditText
-                android:id="@+id/displayPlace"
+                android:id="@+id/p_journey_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,8 +119,6 @@
                 android:padding="7dp"
                 android:password="false"
                 android:singleLine="true" />
-
-
             <Button
                 android:id="@+id/Submit"
                 style="@style/Button"
@@ -132,9 +133,19 @@
                 android:textColor="#ffffff"
                 android:textSize="20sp"
                 android:onClick="search"/>
-
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_form"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="66dp"
+        android:id="@+id/textView_show"
+        android:textColor="@color/colorAccent"
+        android:text="mimshad" />
 
 
 </RelativeLayout>
