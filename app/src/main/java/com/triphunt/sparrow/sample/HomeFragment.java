@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
         }
 
 
-        tv.setText("Welcome \n" + profile.getName());//asking for current profile name
+        tv.setText("Welcome\n" + profile.getName());//asking for current profile name
 
         Picasso.with(getActivity())
                 .load(profile.getProfilePictureUri(400, 400).toString())
