@@ -27,14 +27,14 @@
             android:paddingTop="10dp">
 
             <EditText
-                android:id="@+id/budget_id"
+                android:id="@+id/no_day_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:background="#FFF"
-                android:hint="Budget"
+                android:hint="No Of Days"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:maxLines="1"
@@ -74,13 +74,13 @@
 
 
             <EditText
-                android:id="@+id/no_day_id"
+                android:id="@+id/budget_id"
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="#FFF"
-                android:hint="No Of Days"
+                android:hint="Budget"
                 android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified|actionDone"

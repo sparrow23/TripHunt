@@ -134,6 +134,21 @@ public class PlaceDetails extends Fragment {
 
             }
         });
+        b_regional_food.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                RegionalFood fragment = new RegionalFood();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+
+                Bundle args = new Bundle();
+                args.putString("name", name);
+                //args.putString("id", id);
+                fragment.setArguments(args);
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.commitAllowingStateLoss();
+
+            }
+        });
         // Inflate the layout for this fragment
 
         return v;

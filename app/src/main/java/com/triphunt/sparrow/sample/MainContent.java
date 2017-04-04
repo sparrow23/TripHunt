@@ -23,6 +23,7 @@ public class MainContent extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public static final String PARCEL_KEY = "parcel_key";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -38,8 +39,19 @@ public class MainContent extends Fragment {
     ArrayAdapter<CharSequence> adapter;
 
 
+    public MainContent() {
+        // Required empty public constructor
+    }
 
-
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment MainContent.
+     */
+    // TODO: Rename and change types and number of parameters
     public static MainContent newInstance(String param1, String param2) {
         MainContent fragment = new MainContent();
         Bundle args = new Bundle();
@@ -52,12 +64,12 @@ public class MainContent extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //mydb = new DatabaseHelper(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
+        // transfer_data();
     }
 
     @Override
@@ -117,37 +129,28 @@ public class MainContent extends Fragment {
         //else if(date2.length() == 8 && date2.charAt(2) == '/' && date2.charAt(5) == '/') {
         b_search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(budget.getText().toString().matches(""))
+                if(no_day.getText().toString().matches(""))
                 {
 
-                    Toast.makeText(getContext(), "You did not enter a budget", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "You did not enter the number of day", Toast.LENGTH_LONG).show();
 
-                }
-                else if(Integer.parseInt(budget.getText().toString()) <= 1600)
-                {
-                    Toast.makeText(getContext(), "Please enter a budget more than 1600", Toast.LENGTH_LONG).show();
                 }
                 else if(no_person.getText().toString().matches(""))
                 {
                     Toast.makeText(getContext(), "You did not enter the number of person", Toast.LENGTH_LONG).show();
                 }
-                else if(Integer.parseInt(budget.getText().toString()) <= 1600*(Integer.parseInt(no_person.getText().toString())))
-                {
-                    int i = 1600*(Integer.parseInt(no_person.getText().toString()));
-                    Toast.makeText(getContext(), "Please Enter a budget more than "+i+" for "+no_person.getText().toString(), Toast.LENGTH_LONG).show();
-                }
                 else if(purpose2.toString().equals("Select Purpose Of Holiday"))
                 {
                     Toast.makeText(getContext(), "You did not select the purpose of holiday", Toast.LENGTH_LONG).show();
                 }
-                else if(no_day.getText().toString().matches(""))
+                else if(budget.getText().toString().matches(""))
                 {
-                    Toast.makeText(getContext(), "You did not enter the number of day", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "You did not enter a budget", Toast.LENGTH_LONG).show();
                 }
-                else if(Integer.parseInt(budget.getText().toString()) <= 1600*(Integer.parseInt(no_day.getText().toString())))
+                else if(Integer.parseInt(budget.getText().toString()) <= 1600*(Integer.parseInt(no_day.getText().toString()))*(Integer.parseInt(no_person.getText().toString())))
                 {
-                    int i = 1600*(Integer.parseInt(no_day.getText().toString()));
-                    Toast.makeText(getContext(), "Please Enter a budget more than "+i+" for "+no_day.getText().toString(), Toast.LENGTH_LONG).show();
+                    int i = 1600*(Integer.parseInt(no_day.getText().toString()))*(Integer.parseInt(no_person.getText().toString()));
+                    Toast.makeText(getContext(), "Please Enter a budget more than "+i, Toast.LENGTH_LONG).show();
                 }
                 else if(date.getText().toString().matches(""))
                 {
@@ -187,13 +190,7 @@ public class MainContent extends Fragment {
         //}
     }
 
-    private void search () {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager
-                .beginTransaction();
-        fragmentTransaction.replace(R.id.frame, new PlaceInfo());
-        fragmentTransaction.commit();
-    }
 
 
-}//end of class
+}
+
