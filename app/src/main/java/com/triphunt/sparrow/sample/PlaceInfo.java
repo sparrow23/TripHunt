@@ -21,7 +21,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.facebook.Profile;
+
 import java.util.ArrayList;
 
 import static android.content.Intent.getIntent;
@@ -33,11 +35,11 @@ public class PlaceInfo extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Profile profile = null;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Profile profile = null;
     String fb_id, fb_name;
     public View v;
     String purp, purpose2,purpose1;
@@ -69,6 +71,7 @@ public class PlaceInfo extends Fragment {
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_place_info, container, false);
         mydb = new DatabaseHelper(getActivity());
+        profile = Profile.getCurrentProfile();
         place_name = new String[20];
         place_name2 = new String[20];
         place_budget = new Integer[20];
@@ -240,8 +243,9 @@ public class PlaceInfo extends Fragment {
                         args.putString("name", button.getText().toString());
                         // args.putString("id", Integer.toString(id));
                         fragment.setArguments(args);
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.commitAllowingStateLoss();
+                        fragmentTransaction.add(R.id.frame, fragment, "placeDetails");
+                        fragmentTransaction.addToBackStack(PlaceInfo.class.getName());
+                        fragmentTransaction.commit();
                         //Toast.makeText(getActivity(), button.getText().toString()+Integer.toString(id), Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -308,8 +312,9 @@ public class PlaceInfo extends Fragment {
                             args.putString("name", button.getText().toString());
                             // args.putString("id", Integer.toString(id));
                             fragment.setArguments(args);
-                            fragmentTransaction.replace(R.id.frame, fragment);
-                            fragmentTransaction.commitAllowingStateLoss();
+                            fragmentTransaction.replace(R.id.frame, fragment, "placeDetails");
+                            fragmentTransaction.addToBackStack(PlaceInfo.class.getName());
+                            fragmentTransaction.commit();
                             //Toast.makeText(getActivity(), button.getText().toString()+Integer.toString(id), Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -393,15 +398,15 @@ public class PlaceInfo extends Fragment {
                         if (purpose1.toString().equals("Select Your Place")) {
                             Toast.makeText(getContext(), "You did not select the any place", Toast.LENGTH_LONG).show();
                         } else {
-                            SelectedPlaces fragment = new SelectedPlaces();
+                            TempCustomer fragment = new TempCustomer();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                             //SelectedPlaces selectedPlaces = new SelectedPlaces();
                             Bundle args = new Bundle();
-                            //args.putString("place", purpose1);
-                            //args.putString("date", date);
+                            args.putString("place", purpose1);
+                            args.putString("date", date);
                             fragment.setArguments(args);
-                            fragmentTransaction.replace(R.id.frame, fragment);
+                            fragmentTransaction.add(R.id.frame, fragment);
                             fragmentTransaction.commitAllowingStateLoss();
                             //Toast.makeText(getActivity(), button.getText().toString()+Integer.toString(id), Toast.LENGTH_SHORT).show();
                         }
@@ -421,7 +426,7 @@ public class PlaceInfo extends Fragment {
                 tableRow.addView(view);
             }
         }
-
+        // addData();
         //show_data.setText(name);
         // buttonPlace();
 
@@ -434,6 +439,17 @@ public class PlaceInfo extends Fragment {
 
 
     }
+   /* public  void addData()
+    {
+        if(!purpose1.toString().equals("Select Your Place"))
+        {
+            mydb.insertData(profile.getId(), profile.getName(), date, purpose1);
+        }
+        else
+        {
+            //mydb.insertData(profile.getId(), profile.getName(), date, purpose1);
+        }
+    }*/
     /*public void buttonPlace()
     {
         linear = (TableLayout) v.findViewById(R.id.table_layout);

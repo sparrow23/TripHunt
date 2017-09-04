@@ -34,6 +34,10 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Chat Support" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_next"
+                android:title="Weather Data"/>
         </menu>
     </item>
 

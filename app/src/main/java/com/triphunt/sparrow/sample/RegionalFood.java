@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +47,7 @@ public class RegionalFood extends Fragment {
         View v = inflater.inflate(R.layout.fragment_regional_food, container, false);
         mydb = new DatabaseHelper(getActivity());
         regional_food_data = new String[20];
-        TextView t[];
+        Button t[];
 
         Bundle bundle = getArguments();
         name = bundle.getString("name");
@@ -67,14 +68,14 @@ public class RegionalFood extends Fragment {
             Toast.makeText(getContext(), "Sorry no any Malls", Toast.LENGTH_LONG).show();
         }
         LinearLayout root=(LinearLayout) v.findViewById(R.id.linear_layout_regional_food);
-        t = new TextView[20];
+        t = new Button[20];
         root.setOrientation(1);
         for(int j=0;j<i;j++)
         {
-            t[j]=new TextView(getActivity());
+            t[j]=new Button(getActivity());
             // t[j].setLayoutParams(dim);
             t[j].setText(regional_food_data[j]);
-            t[j].setTextColor(Color.parseColor("#FFFFFF"));
+            //t[j].setTextColor(Color.parseColor("#FFFFFF"));
             root.addView(t[j]);
         }
         // Inflate the layout for this fragment

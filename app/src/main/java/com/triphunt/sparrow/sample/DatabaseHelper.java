@@ -1573,4 +1573,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery(selectQuery, null);
         return res;
     }
+    public Integer deleteData(String Sic1)
+    {
+        //int tour = Integer.parseInt(Sic1);
+        SQLiteDatabase db = this.getWritableDatabase();
+        //String selectQuery = Customers_Col1+" = "+Sic1;
+        return db.delete(Table_Customers, Customers_Col1+" = ?", new String[] {Sic1});
+    }
 }

@@ -4,45 +4,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relative">
+    android:id="@+id/relative"
+    android:background="#FF0000">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/triphunt"
+       android:id="@+id/editText"
+       android:textStyle="bold|italic"
+       android:textSize="60sp"
+       android:textColor="#FFFFFF"
+       android:layout_marginTop="130dp"
+       android:layout_centerHorizontal="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="14dp"
+        android:paddingTop="14dp"
+        android:visibility="gone"
+        android:layout_marginTop="335dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:color="#4285F4"
+        android:text="@string/common_signin_button_text_long"
+        android:onClick="click_google"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_marginBottom="135dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
-        android:textColorHighlight="@color/switch_thumb_disabled_material_dark"
-        android:textColor="@android:color/darker_gray"
-        android:textIsSelectable="false"
-        android:textSize="@android:dimen/app_icon_size"
-        android:id="@+id/textView"
-        android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:visibility="visible"
-        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Let's Hunt"
+        android:textStyle="normal|bold|italic"
+        android:textColor="#f2f2f2"
+        android:id="@+id/textView2"
+        android:visibility="gone"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By using path, you agree \n Term of use and Privacy "
+        android:id="@+id/textView3"
         android:layout_alignParentBottom="true"
-        android:textStyle="bold" />
-
-
-
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:color="#4285F4"
-        android:text="Login with Google"
-        android:onClick="click_google"/>
+        android:textColor="#f2f2f2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>

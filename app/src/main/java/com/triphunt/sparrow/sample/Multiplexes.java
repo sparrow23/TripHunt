@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -27,7 +28,7 @@ public class Multiplexes extends Fragment {
     private String mParam1;
     private String mParam2;
     String id;
-    TextView t[];
+    Button t[];
     String multiplexes_data[];
     DatabaseHelper mydb;
     String name, addr, name3;
@@ -72,14 +73,14 @@ public class Multiplexes extends Fragment {
         ListAdapter theAdapter =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, multiplexes_data);
         theListView.setAdapter(theAdapter);*/
         LinearLayout root=(LinearLayout) v.findViewById(R.id.linear_layout_multiplexes);
-        t = new TextView[20];
-        //root.setOrientation(1);
+        t = new Button[20];
+        root.setOrientation(1);
         for(int j=0;j<i;j++)
         {
-            t[j]=new TextView(getActivity());
+            t[j]=new Button(getActivity());
             // t[j].setLayoutParams(dim);
             t[j].setText(multiplexes_data[j]);
-            t[j].setTextColor(Color.parseColor("#FFFFFF"));
+            //t[j].setTextColor(Color.parseColor("#FFFFFF"));
             root.addView(t[j]);
         }
         // Inflate the layout for this fragment

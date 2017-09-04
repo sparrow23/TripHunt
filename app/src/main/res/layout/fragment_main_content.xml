@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.triphunt.sparrow.sample.MainActivity"
-    android:background="@drawable/f1">
+    android:background="@drawable/sample4">
 
     <ScrollView
         android:id="@+id/login_form"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:paddingTop="35dp">
 
             <EditText
                 android:id="@+id/no_day_id"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="#FFF"
-                android:hint="Journey Date"
+                android:hint="Journey Date. eg(dd/mm/yyyy)"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:maxLines="2"
@@ -145,7 +145,11 @@
         android:layout_marginTop="66dp"
         android:id="@+id/textView_show"
         android:textColor="@color/colorAccent"
-        android:text="mimshad" />
+        android:text="" />
 
 
 </RelativeLayout>
+
+
+
+

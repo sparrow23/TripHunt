@@ -1,6 +1,7 @@
 package com.triphunt.sparrow.sample;
 
 import android.app.ActionBar;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.Profile;
+import com.facebook.login.*;
+import com.facebook.login.LoginFragment;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
                 android.R.anim.fade_out);
-        fragmentTransaction.replace(R.id.frame, fragment);
+        fragmentTransaction.replace(R.id.frame, fragment, "main");
         fragmentTransaction.commitAllowingStateLoss();
     }
 
@@ -97,13 +100,61 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-        else {
-            Fragment fragment = new MainContent();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment);
-            fragmentTransaction.commitAllowingStateLoss();
-            //super.onBackPressed();
+
+        FragmentManager fragmentManager = getFragmentManager();
+        PlaceDetails myFragment =(PlaceDetails) getSupportFragmentManager().findFragmentByTag("placeDetails");
+        PlaceInfo myFragment1 =(PlaceInfo) getSupportFragmentManager().findFragmentByTag("placeInfo");
+        Hotels myFragment2 =(Hotels) getSupportFragmentManager().findFragmentByTag("hotels");
+        VisitPlace myFragment3 =(VisitPlace) getSupportFragmentManager().findFragmentByTag("visitPlace");
+        Malls myFragment4 =(Malls) getSupportFragmentManager().findFragmentByTag("malls");
+        Multiplexes myFragment5 =(Multiplexes) getSupportFragmentManager().findFragmentByTag("multiplexes");
+        RegionalFood myFragment6 =(RegionalFood) getSupportFragmentManager().findFragmentByTag("regionalFood");
+        MainContent myFragment7 =(MainContent) getSupportFragmentManager().findFragmentByTag("main");
+
+        if (myFragment != null && myFragment.isVisible()) {
+            // add your code here
+           super.onBackPressed();
+
         }
+
+       else if (myFragment1 != null && myFragment1.isVisible()) {
+            // add your code here
+             super.onBackPressed();
+
+        }
+        else if (myFragment2 != null && myFragment2.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+        else if (myFragment3 != null && myFragment3.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+        else if (myFragment4 != null && myFragment4.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+        else if (myFragment5 != null && myFragment5.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+
+        else if (myFragment6 != null && myFragment6.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+        else if (myFragment7 != null && myFragment7.isVisible()) {
+            // add your code here
+            super.onBackPressed();
+
+        }
+
+
     }
 
     @Override
@@ -135,24 +186,64 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Fragment fragment = new MainContent();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, "New Tour");
+            fragmentTransaction.commitAllowingStateLoss();
 
+
+
+        } else if (id == R.id.nav_gallery) {
+            Fragment fragment = new SelectedPlaces();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, fragment.getTag());
+            fragmentTransaction.commitAllowingStateLoss();
         } else if (id == R.id.nav_slideshow) {
 
+            Fragment fragment = new OldTour();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, fragment.getTag());
+            fragmentTransaction.commitAllowingStateLoss();
         } else if (id == R.id.nav_manage) {
+            Fragment fragment = new CancelTour();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, fragment.getTag());
+            fragmentTransaction.commitAllowingStateLoss();
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.applozic.mobicomkit.sample");
+            if (launchIntent != null) {
+                startActivity(launchIntent);//null pointer check in case package name was not found
+            }
 
-        } else if (id == R.id.weather_info){
-            navItemIndex = 4;
-            //setToolbarTitle();
-            Toast.makeText(this, "okay you can do it", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(MainActivity.this, WeatherActivity.class));
+
+
+        } else if (id == R.id.weather_info) {
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.sparrow.weatherapp");
+            if (launchIntent != null) {
+                startActivity(launchIntent);//null pointer check in case package name was not found
+            }
+
+        } else if(id == R.id.logout) {
+
+            LoginManager.getInstance().logOut();
+            Fragment fragment = new LoginFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, fragment.getTag());
+            fragmentTransaction.commitAllowingStateLoss();
         }
-        
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

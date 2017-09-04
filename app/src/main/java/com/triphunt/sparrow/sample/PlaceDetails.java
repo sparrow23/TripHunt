@@ -84,8 +84,9 @@ public class PlaceDetails extends Fragment {
                 args.putString("name", name);
                 //args.putString("id", id);
                 fragment.setArguments(args);
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.replace(R.id.frame, fragment, "hotels");
+                fragmentTransaction.addToBackStack(PlaceDetails.class.getName());
+                fragmentTransaction.commit();
 
             }
         });
@@ -99,8 +100,9 @@ public class PlaceDetails extends Fragment {
                 args.putString("name", name);
                 //  args.putString("id", id);
                 fragment.setArguments(args);
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.replace(R.id.frame, fragment, "visitPlace");
+                fragmentTransaction.addToBackStack(PlaceDetails.class.getName());
+                fragmentTransaction.commit();
 
             }
         });
@@ -114,8 +116,9 @@ public class PlaceDetails extends Fragment {
                 args.putString("name", name);
                 //args.putString("id", id);
                 fragment.setArguments(args);
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.replace(R.id.frame, fragment, "malls");
+                fragmentTransaction.addToBackStack(PlaceDetails.class.getName());
+                fragmentTransaction.commit();
 
             }
         });
@@ -129,8 +132,9 @@ public class PlaceDetails extends Fragment {
                 args.putString("name", name);
                 //args.putString("id", id);
                 fragment.setArguments(args);
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.replace(R.id.frame, fragment, "multiplexes");
+                fragmentTransaction.addToBackStack(PlaceDetails.class.getName());
+                fragmentTransaction.commit();
 
             }
         });
@@ -144,8 +148,9 @@ public class PlaceDetails extends Fragment {
                 args.putString("name", name);
                 //args.putString("id", id);
                 fragment.setArguments(args);
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.replace(R.id.frame, fragment, "regionalFood");
+                fragmentTransaction.addToBackStack(PlaceDetails.class.getName());
+                fragmentTransaction.commit();
 
             }
         });

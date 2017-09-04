@@ -1,7 +1,8 @@
 package com.triphunt.sparrow.sample;
 
-//import android.content.Context;
-//import android.net.Uri;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.facebook.Profile;
+
 
 
 public class MainContent extends Fragment {
@@ -35,7 +38,6 @@ public class MainContent extends Fragment {
     Button b_search;
     public View v;
     private TextView show_data;
-    //DatabaseHelper mydb;
     ArrayAdapter<CharSequence> adapter;
 
 
@@ -76,7 +78,7 @@ public class MainContent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_main_content, container, false);
-        // mydb = new DatabaseHelper(getActivity());
+        //mydb = new DatabaseHelper(getActivity());
         b_search = (Button) v.findViewById(R.id.Submit);
         budget = (EditText) v.findViewById(R.id.budget_id);
         no_person = (EditText) v.findViewById(R.id.no_person_id);
@@ -169,9 +171,7 @@ public class MainContent extends Fragment {
                     Toast.makeText(getContext(), "You did not enter a starting place of journey", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    FragmentTransaction transection = getFragmentManager().beginTransaction();
-                    transection.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-                    PlaceInfo mfragment = new PlaceInfo();
+
                     Bundle args = new Bundle();
                     args.putString("budget", budget.getText().toString());
                     args.putString("no_person", no_person.getText().toString());
@@ -179,9 +179,14 @@ public class MainContent extends Fragment {
                     args.putString("date", date.getText().toString());
                     args.putString("p_journey", p_journey.getText().toString());
                     args.putString("purpose", purpose2.toString());
+
+                    FragmentTransaction transection = getFragmentManager().beginTransaction();
+                    transection.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+                    PlaceInfo mfragment = new PlaceInfo();
                     mfragment.setArguments(args);
-                    transection.replace(R.id.frame, mfragment);
-                    transection.commitAllowingStateLoss();
+                    transection.replace(R.id.frame, mfragment, "placeInfo");
+                    transection.addToBackStack(MainContent.class.getName());
+                    transection.commit();
                 }
 
 
@@ -192,5 +197,5 @@ public class MainContent extends Fragment {
 
 
 
-}
 
+}

@@ -2,6 +2,7 @@ package com.triphunt.sparrow.sample;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -24,6 +28,7 @@ import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.common.SignInButton;
 
 public class LoginFragment extends Fragment {
 
@@ -60,10 +65,7 @@ public class LoginFragment extends Fragment {
         FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
         //AccessToken accessToken = AccessToken.getCurrentAccessToken();
 
-
         callbackManager = CallbackManager.Factory.create();
-
-
         mtracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
@@ -71,7 +73,6 @@ public class LoginFragment extends Fragment {
                 Log.v("AccessTokenTracker", "oldAccessToken=" + oldAccessToken + "||" + "CurrentAccessToken" + currentAccessToken);
             }
         };
-
 
         mprofileTracker = new ProfileTracker() {
             @Override
@@ -98,14 +99,6 @@ public class LoginFragment extends Fragment {
 
             hf.setArguments(mBundle);
 
-
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager
-                    .beginTransaction();
-            fragmentTransaction.replace(R.id.frag_container1, new HomeFragment());
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-
         }
     }
 
@@ -113,11 +106,41 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
+        final TextView tv = (TextView) view.findViewById(R.id.editText);
+        final Animation an4 = AnimationUtils.loadAnimation(this.getActivity(), R.anim.translate);
+        final TextView tv1 = (TextView) view.findViewById(R.id.textView3);
+        final TextView tv2 = (TextView) view.findViewById(R.id.textView2);
+        final LoginButton lb = (LoginButton) view.findViewById(R.id.login_button);
+        final SignInButton lb1 = (SignInButton) view.findViewById(R.id.sign_in_button);
 
-        RelativeLayout r = (RelativeLayout) view.findViewById(R.id.relative);
-        r.setBackgroundResource(R.drawable.movie);
-        AnimationDrawable anim = (AnimationDrawable) r.getBackground();
-        anim.start();
+        Typeface customFont = Typeface.createFromAsset(getContext().getAssets(), "fonts/Pacifico.ttf");
+        tv.setTypeface(customFont);
+        tv.startAnimation(an4);
+
+        an4.setAnimationListener(new Animation.AnimationListener() {
+                                     @Override
+                                     public void onAnimationStart(Animation animation) {
+
+                                     }
+
+                                     @Override
+                                     public void onAnimationEnd(Animation animation) {
+                                         //tv.startAnimation(an2);
+                                         lb.setVisibility(View.VISIBLE);
+                                         lb1.setVisibility(View.VISIBLE);
+                                         tv2.setVisibility(View.VISIBLE);
+                                         tv1.setVisibility(View.VISIBLE);
+
+                                     }
+
+                                     @Override
+                                     public void onAnimationRepeat(Animation animation) {
+
+                                     }
+                                 }
+
+
+        );
         return view ;
     }
 
