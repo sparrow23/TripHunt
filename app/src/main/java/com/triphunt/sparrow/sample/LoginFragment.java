@@ -35,9 +35,7 @@ public class LoginFragment extends Fragment {
     private CallbackManager callbackManager = null;
     private AccessTokenTracker mtracker = null;
     private ProfileTracker mprofileTracker = null;
-
     public static final String PARCEL_KEY = "parcel_key";
-
     private LoginButton loginButton;
 
     FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {

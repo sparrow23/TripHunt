@@ -72,13 +72,13 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void logout() {
-        LoginManager.getInstance().logOut();
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager
-                .beginTransaction();
-        fragmentTransaction.replace(R.id.frag_container1, new LoginFragment());
-        fragmentTransaction.commit();
+   private void logout() {
+//        LoginManager.getInstance().logOut();
+//        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager
+//                .beginTransaction();
+//        fragmentTransaction.replace(R.id.frag_container1, new LoginFragment());
+//        fragmentTransaction.commit();
     }
 
     private void search()
